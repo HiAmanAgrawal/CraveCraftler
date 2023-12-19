@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Josefin+Sans&family=La+Belle+Aurore&family=Lily+Script+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+button{
+    cursor: pointer;
+}
+body {
+    background-image: url(./assets/BackgroundFigma.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#upperNavigationBar {
+    background-color: white;
+    width: 100vw;
+    height: 11vh;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+#logo {
+    height: 11vh;
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 2.5rem;
+    display: flex;
+    margin-top: 2vh;
+    align-items: center; 
+    cursor: pointer;
+}
+
+#logo img {
+    width: 4vw;
+    margin-top: -2vh;
+    margin-left: 1vw;
+    cursor: pointer;
+}
+
+#rightNavigation {
+    display: flex; 
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end; 
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: #A94A4A;
+}
+
+nav #home {
+    background-color: #A94A4A;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+nav a:hover{
+    background-color: rgba(116, 72, 72, 0.249);
+    
+}
+
+
+#quoteSection {
+    display: flex;
+    padding: 50px 0;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    cursor: default;
+    padding-bottom: 0;
+}
+
+#quote {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#author {
+    display: block;
+    font-size: 1.2rem;
+    text-align: right;
+    font-family: 'Lily Script One', cursive;
+}
+#fixedSearchIcon {
+    position: absolute;
+    left: 12vw;
+    top: 32vh;
+}
+#searchPanel{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+#searchBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 69vw;
+    height: 5vh;
+    border: none;
+    border-top-left-radius: 146px;
+    border-bottom-left-radius: 146px;
+    padding: 10px;
+    padding-left: 3vw;
+    font-size: 1.2rem;
+    margin: 20px;
+    color: #A94A4A;
+    margin-right: 0;
+}
+#searchpanel{
+    position: absolute;
+}
+input{
+    font-family: 'Josefin Sans', sans-serif;
+}
+input::placeholder{
+    font-family: 'Josefin Sans', sans-serif;
+}
+#searchPanel button{
+    height: 7.7vh;
+    border-top-right-radius: 146px;
+    border-bottom-right-radius: 146px;
+    margin: 20px;
+    margin-left: 0;
+    border: none;
+    width: 5vw;
+    background-color: white;
+    border-left: 2px solid #A94A4A;
+}
+#randomPick{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    cursor: default;
+}
+#randomPick u{
+    display: flex;
+    align-items: center;
+    font-family: "Leckerli One", Tofu;
+    color: white;
+    font-size: 7rem;
+    height: 50vh;
+}
+#randomMeal{
+    width: 20vw;
+    height: 38vh;
+    margin: 2vw;
+    background-color: white;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.randomImage{
+    width: 19vw;
+    height: 25vh;
+    border: 5px solid black;
+    margin-bottom: 5px;
+}
+.mealName{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.2rem;
+    color: #A94A4A;
+    font-weight: 700;
+}
+.stats{
+    display: flex;
+    flex-direction: row;
+}
+.rating{
+    width: 3vw;
+    height: 3vh;
+    background-color: green;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+}
+.rating img{
+    margin: 3px;
+}
+.rating u{
+    font-size: 0.8rem !important;
+}
+.line{
+    width: 2px;
+    height: 4vh;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #A94A4A;
+}
+.views{
+    display: flex;
+    align-items: flex-end;
+}
+.views p{
+    
+    font-family: 'Josefin Sans', sans-serif;
+}
+.recipe{
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #A94A4A;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    width: 10vw;
+    align-items: left;
+}
+.recipeButton{
+    display: flex;
+    justify-content: flex-end;
+}
