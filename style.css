@@ -295,15 +295,16 @@ input::placeholder {
 }
 #button{
   padding: 10px;
-    background-color: #a94a4a;
-    font-size: 1rem;
-    border: 3px solid black;
-    margin-left: 35vw;
-    margin-top: 3vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 7vw;
+  background-color: #a94a4a;
+  font-size: 1rem;
+  border: 3px solid black;
+  position: relative;
+  left: 29vw;
+  bottom: 0vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
   
 }
 #button a{
@@ -324,15 +325,19 @@ input::placeholder {
   width: 40vw;
 }
 #insrtructionsAndButton ol{
-  height: 63vh;
+  height: 60vh;
   font-family: "Josefin Sans", sans-serif;
-
   overflow-y: scroll;
   width: 44vw;
+  padding: 20px;
+  padding-right: 0;
+}
+#insrtructionsAndButton ol li{
+  margin: 10px 0;
 }
 #ingredients {
   margin-left: 2vw;
-  width: 400px;
+  width: 30vw;
   height: 30vh;
   overflow: scroll;
   overflow-x: hidden;
@@ -345,7 +350,7 @@ input::placeholder {
   font-size: 2rem;
 }
 .modal-content img {
-  width: 443px;
+  width: 30vw;
   border: 8px solid black;
   margin: 2vw;
   margin-bottom: 0;
