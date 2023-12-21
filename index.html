@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CraveCraftler</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,12 +31,12 @@
     <div id="searchPanel">
         <img src="./assets/Search icon.png" alt="search for" id="fixedSearchIcon" width="25px">
         <input type="text" id="searchBar" placeholder="So, What are you Cooking Today?">
-        <button><img src="./assets/Search icon.png" alt="search"></button>
+        <button id="searchButton"><img src="./assets/Search icon.png" alt="search"></button>
     </div>
     <div id="randomPick">
         <u>Today's Hot</u>
         <div id="randomMeal">
-            <div class="randomImage"></div>
+            <!-- <div class="randomImage"></div>
             <div class="mealName"></div>
             <div class="stats">
                 <div class="rating">
@@ -47,31 +47,16 @@
                 <div class="views"><p>(4.8k views)</p></div>
             </div>
             <div class="recipeButton">
-                <button class="recipeText">>Recipe</button>
+                <button class="recipeText">>Recipe</button> -->
             </div>
 
         </div>
     </div>
 
     <div id="searchResult">
-        <div id="results">
+        <div id="resultsBox">
             <div id="info">Result's based on your search:-</div>
-            <div class="searchMeal">
-                <div class="randomImage"></div>
-                <div class="mealName">Pasta Burrata Bruschetta</div>
-                <div class="stats">
-                    <div class="rating">
-                        <img src="./assets/star.png" alt="star" width="10px">
-                        <u>4.3</u>
-                    </div>
-                    <div class="line"></div>
-                    <div class="views"><p>(4.8k views)</p></div>
-                </div>
-                <div class="recipeButton">
-                    <button class="recipeText">>Recipe</button>
-                </div>
-    
-            </div>
+            <div id="results"></div>
         </div>
     </div>
 
@@ -83,6 +68,14 @@
 
     <div id="lowerNavigation">
 
+    </div>
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div id="modalContent">
+                <!-- Content inside the modal will go here -->
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
