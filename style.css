@@ -290,31 +290,26 @@ input::placeholder {
   border-radius: 10px;
 }
 .modal-content p {
-    padding: 14px;
     font-size: 1.2rem;
     font-family: "Josefin Sans", sans-serif;
-    width: 48vw;
-    height: 62vh;
-    overflow: scroll;
-    overflow-x: hidden;
 }
 #button{
-  text-decoration: none;
   padding: 10px;
-  background-color: #a94a4a;
-  font-size: 1rem;
-  color: white;
-  font-family: "Josefin Sans", sans-serif;
-  border: 3px solid black;
-  margin-left: 35vw;
-  /* display: flex; */
-  /* flex-direction: end; */
+    background-color: #a94a4a;
+    font-size: 1rem;
+    border: 3px solid black;
+    margin-left: 35vw;
+    margin-top: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7vw;
+  
 }
-#button img{
-  border: none;
-  width: 30px;
-  height: 20px;
-  margin: 0;
+#button a{
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
 }
 #container{
   display: flex;
@@ -326,11 +321,18 @@ input::placeholder {
 }
 #insrtructionsAndButton{
   display: inline-block;
-  width: 50vw;
+  width: 40vw;
+}
+#insrtructionsAndButton ol{
+  height: 63vh;
+  font-family: "Josefin Sans", sans-serif;
+
+  overflow-y: scroll;
+  width: 44vw;
 }
 #ingredients {
-  margin-left: 1vw;
-  width: 440px;
+  margin-left: 2vw;
+  width: 400px;
   height: 30vh;
   overflow: scroll;
   overflow-x: hidden;
@@ -349,6 +351,13 @@ input::placeholder {
   margin-bottom: 0;
   height: 272px;
 }
+#ytIcon{
+  border: none;
+  width: 50px;
+  height: 30px;
+  margin: 0;
+  margin-right: 10px;
+}
 
 .close {
   color: #000;
@@ -356,4 +365,7 @@ input::placeholder {
   font-size: 54px;
   font-weight: 800;
   cursor: pointer;
+}
+.headings{
+  font-size: 1.5rem !important;
 }

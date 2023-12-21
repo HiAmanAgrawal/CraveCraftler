@@ -134,15 +134,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 <img src="${detailedMeal.strMealThumb}" alt="${
           detailedMeal.strMeal
         }" style="max-width: 100%;">
-                <p class="headings" id="ingredients"><strong>Ingredients:</strong> ${getIngredients(
+                <p  id="ingredients"><strong class="headings">Ingredients:</strong> ${getIngredients(
                   detailedMeal
                 )}</p>
                 </div>
                 <div id="insrtructionsAndButton">
                 <p id="instructions"><strong class="headings">Instructions:</strong></br> ${
-                  detailedMeal.strInstructions
+                  createListFromParagraph(detailedMeal.strInstructions)
                 }</p>
-                <a href="${detailedMeal.strYoutube}" id="button"><img src="./assets/youtube.png" ">Watch Tutorial!</a>
+                <div id="button">
+                <img src="./assets/youtube.png" id="ytIcon">
+                <a href="${detailedMeal.strYoutube}" >Watch Tutorial!</a>
+                <div>
                 </div>
                 </div>
             `;
@@ -184,3 +187,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+function createListFromParagraph(paragraph) {
+  if (typeof paragraph !== 'string') {
+    // If paragraph is not a string, return an empty string or handle the error accordingly
+    return '';
+  }
+
+  // Split the paragraph into sentences using periods as the delimiter
+  const sentences = paragraph.split('.');
+
+  // Remove empty strings from the array (caused by consecutive periods)
+  const nonEmptySentences = sentences.filter(sentence => sentence.trim() !== '');
+
+  // Use Array.map to create an array of <li> elements
+  const listItems = nonEmptySentences.map(sentence => `<li>${sentence.trim()}</li>`);
+
+  // Join the array of <li> elements into a single string
+  const listHtml = `<ol>${listItems.join('')}</ol>`;
+
+  return listHtml;
+}
