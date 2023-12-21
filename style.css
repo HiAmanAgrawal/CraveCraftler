@@ -1,294 +1,359 @@
-@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Josefin+Sans&family=La+Belle+Aurore&family=Lily+Script+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Leckerli+One&family=Josefin+Sans&family=La+Belle+Aurore&family=Lily+Script+One&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-button{
-    cursor: pointer;
+button {
+  cursor: pointer;
 }
 body {
-    background-image: url(./assets/BackgroundFigma.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 100vh;
-    overflow: hidden;
+  background-image: url(./assets/BackgroundFigma.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  overflow: hidden;
 }
 
 #upperNavigationBar {
-    background-color: white;
-    width: 100vw;
-    height: 11vh;
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
+  background-color: white;
+  width: 100vw;
+  height: 11vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #logo {
-    height: 11vh;
-    font-family: 'La Belle Aurore', cursive;
-    font-size: 2.5rem;
-    display: flex;
-    margin-top: 2vh;
-    align-items: center; 
-    cursor: pointer;
+  height: 11vh;
+  font-family: "La Belle Aurore", cursive;
+  font-size: 2.5rem;
+  display: flex;
+  margin-top: 2vh;
+  align-items: center;
+  cursor: pointer;
 }
 
 #logo img {
-    width: 4vw;
-    margin-top: -2vh;
-    margin-left: 1vw;
-    cursor: pointer;
+  width: 4vw;
+  margin-top: -2vh;
+  margin-left: 1vw;
+  cursor: pointer;
 }
 
 #rightNavigation {
-    display: flex; 
+  display: flex;
 }
 
 nav {
-    display: flex;
-    justify-content: flex-end; 
+  display: flex;
+  justify-content: flex-end;
 }
 
 nav a {
-    color: black;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 300;
-    font-size: 1.2rem;
-    color: #A94A4A;
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: #a94a4a;
 }
 
 nav #home {
-    background-color: #A94A4A;
-    color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #a94a4a;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-nav a:hover{
-    background-color: rgba(116, 72, 72, 0.249);
-    
+nav a:hover {
+  background-color: rgba(116, 72, 72, 0.249);
 }
-
 
 #quoteSection {
-    display: flex;
-    padding: 50px 0;
-    text-align: center;
-    justify-content: center;
-    color: white;
-    cursor: default;
-    padding-bottom: 0;
+  display: flex;
+  padding: 50px 0;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  cursor: default;
+  padding-bottom: 0;
 }
 
 #quote {
-    display: block;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    font-family: 'Josefin Sans', sans-serif;
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 #author {
-    display: block;
-    font-size: 1.2rem;
-    text-align: right;
-    font-family: 'Lily Script One', cursive;
+  display: block;
+  font-size: 1.2rem;
+  text-align: right;
+  font-family: "Lily Script One", cursive;
 }
 #fixedSearchIcon {
-    position: relative;
-    left: 4vw;
-    top: 4.8vh;
-    height: 3vh;
-    width: 1.5vw;
+  position: relative;
+  left: 4vw;
+  top: 4.8vh;
+  height: 3vh;
+  width: 1.5vw;
 }
-#searchPanel{
-    width: 100vw;
-    display: flex;
-    justify-content: center;
+#searchPanel {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
 }
 #searchBar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 69vw;
-    height: 5vh;
-    border: none;
-    border-top-left-radius: 146px;
-    border-bottom-left-radius: 146px;
-    padding: 10px;
-    padding-left: 3vw;
-    font-size: 1.2rem;
-    margin: 20px;
-    color: #A94A4A;
-    margin-right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 69vw;
+  height: 5vh;
+  border: none;
+  border-top-left-radius: 146px;
+  border-bottom-left-radius: 146px;
+  padding: 10px;
+  padding-left: 3vw;
+  font-size: 1.2rem;
+  margin: 20px;
+  color: #a94a4a;
+  margin-right: 0;
 }
-#searchpanel{
-    position: absolute;
+#searchpanel {
+  position: absolute;
 }
-input{
-    font-family: 'Josefin Sans', sans-serif;
+input {
+  font-family: "Josefin Sans", sans-serif;
 }
-input::placeholder{
-    font-family: 'Josefin Sans', sans-serif;
+input::placeholder {
+  font-family: "Josefin Sans", sans-serif;
 }
-#searchPanel button{
-    height: 7.7vh;
-    border-top-right-radius: 146px;
-    border-bottom-right-radius: 146px;
-    margin: 20px;
-    margin-left: 0;
-    border: none;
-    width: 5vw;
-    background-color: white;
-    border-left: 2px solid #A94A4A;
+#searchPanel button {
+  height: 7.7vh;
+  border-top-right-radius: 146px;
+  border-bottom-right-radius: 146px;
+  margin: 20px;
+  margin-left: 0;
+  border: none;
+  width: 5vw;
+  background-color: white;
+  border-left: 2px solid #a94a4a;
 }
-#randomPick{
-    display: flex;                             /*change to flex when upper home button is clicked and change to none when search button is cli*/
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    cursor: default;
+#randomPick {
+  display: flex; /*change to flex when upper home button is clicked and change to none when search button is cli*/
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  cursor: default;
 }
-#randomPick u{
-    display: flex;
-    align-items: center;
-    font-family: "Leckerli One", Tofu;
-    color: white;
-    font-size: 7rem;
-    height: 50vh;
+#randomPick u {
+  display: flex;
+  align-items: center;
+  font-family: "Leckerli One", Tofu;
+  color: white;
+  font-size: 7rem;
+  height: 50vh;
 }
-#randomMeal , .searchMeal{
-    min-width: 300px;
-    margin: 1vw;
-    background-color: white;
-    padding: 0.5vw;
-    display: flex;
-    flex-direction: column;
+#randomMeal,
+.searchMeal {
+  min-width: 300px;
+  margin: 1vw;
+  background-color: white;
+  padding: 0.5vw;
+  display: flex;
+  flex-direction: column;
 }
 
-.randomImage{
-    width: 19vw;
-    height: 25vh;
-    border: 5px solid black;
-    margin-bottom: 5px;
+.randomImage {
+  width: 19vw;
+  height: 25vh;
+  border: 5px solid black;
+  margin-bottom: 5px;
 }
-.randomImage img{
-    width: 100%;
-    height: 100%;
+.randomImage img {
+  width: 100%;
+  height: 100%;
 }
-.mealName{
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.2rem;
-    color: #A94A4A;
-    font-weight: 700;
+.mealName {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2rem;
+  color: #a94a4a;
+  font-weight: 700;
 }
-.stats{
-    display: flex;
-    flex-direction: row;
+.stats {
+  display: flex;
+  flex-direction: row;
 }
-.rating{
-    width: 3vw;
-    height: 3vh;
-    background-color: green;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    padding: 3px;
+.rating {
+  width: 3vw;
+  height: 3vh;
+  background-color: green;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 3px;
 }
-.rating img{
-    margin: 3px;
-    width: 10px;
+.rating img {
+  margin: 3px;
+  width: 10px;
 }
-.rating u{
-    font-size: 0.8rem !important;
+.rating u {
+  font-size: 0.8rem !important;
 }
-.line{
-    width: 2px;
-    height: 4vh;
-    margin-left: 10px;
-    margin-right: 10px;
-    background-color: #A94A4A;
+.line {
+  width: 2px;
+  height: 4vh;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #a94a4a;
 }
-.views{
-    display: flex;
-    align-items: flex-end;
+.views {
+  display: flex;
+  align-items: flex-end;
 }
-.views p{
-    font-family: "Josefin Sans", sans-serif;
-    color: gray;
-    font-size: 20px;
+.views p {
+  font-family: "Josefin Sans", sans-serif;
+  color: gray;
+  font-size: 20px;
 }
-.recipeText{
-    text-decoration: none;
-    font-family: 'Josefin Sans', sans-serif;
-    background-color: #A94A4A;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    padding: 10px;
-    width: 10vw;
-    align-items: left;
+.recipeText {
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #a94a4a;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  width: 10vw;
+  align-items: left;
 }
-.recipeButton{
-    display: flex;
-    justify-content: flex-end;
+.recipeButton {
+  display: flex;
+  justify-content: flex-end;
 }
 /*New div*/
 
-#searchResult{
-    width: 100vw;
-    height: 64vh;
-    display: flex;
-    justify-content: center;
+#searchResult {
+  width: 100vw;
+  height: 64vh;
+  display: flex;
+  justify-content: center;
 }
-#resultsBox{
-    display: none;
-    font-family: 'Josefin Sans', sans-serif;
-    color: white;
-    font-size: 2rem;
-    width: 80vw;
-    height: 64vh;
+#resultsBox {
+  display: none;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  font-size: 2rem;
+  width: 80vw;
+  height: 64vh;
 }
 #results {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 56vh;
-    margin-top: 10px;
-    overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 56vh;
+  margin-top: 10px;
+  overflow: scroll;
 }
 /* css for modal */
 
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.7);
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+  overflow: hidden;
 }
 
 .modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+  position: relative;
+  background-image: url(./assets/modal.jpg);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+
+  margin: 3% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80vw;
+  height: 80vh;
+  border-radius: 10px;
+}
+.modal-content p {
+    padding: 14px;
+    font-size: 1.2rem;
+    font-family: "Josefin Sans", sans-serif;
+    width: 48vw;
+    height: 62vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+#button{
+  text-decoration: none;
+  padding: 10px;
+  background-color: #a94a4a;
+  font-size: 1rem;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  border: 3px solid black;
+  margin-left: 35vw;
+  /* display: flex; */
+  /* flex-direction: end; */
+}
+#button img{
+  border: none;
+  width: 30px;
+  height: 20px;
+  margin: 0;
+}
+#container{
+  display: flex;
+  flex-direction: row;
+}
+#imageAndIngredients {
+  display: inline-block;
+  width: 35vw;
+}
+#insrtructionsAndButton{
+  display: inline-block;
+  width: 50vw;
+}
+#ingredients {
+  margin-left: 1vw;
+  width: 440px;
+  height: 30vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.modal-content h2 {
+  text-align: center;
+  color: #a94a4a;
+  font-family: "Josefin Sans", sans-serif;
+  text-decoration: underline;
+  font-size: 2rem;
+}
+.modal-content img {
+  width: 443px;
+  border: 8px solid black;
+  margin: 2vw;
+  margin-bottom: 0;
+  height: 272px;
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+  color: #000;
+  float: right;
+  font-size: 54px;
+  font-weight: 800;
+  cursor: pointer;
 }
