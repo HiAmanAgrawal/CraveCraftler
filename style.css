@@ -37,9 +37,9 @@ body {
 }
 
 #logo img {
-  width: 4vw;
+  height: 9vh;
   margin-top: -2vh;
-  margin-left: 1vw;
+  margin-left: 3vw;
   cursor: pointer;
 }
 
@@ -99,10 +99,10 @@ nav a:hover {
 }
 #fixedSearchIcon {
   position: relative;
-  left: 4vw;
-  top: 4.8vh;
-  height: 3vh;
-  width: 1.5vw;
+  left: 64px;
+  top: 34px;
+  height: 30px;
+  width: 30px;
 }
 #searchPanel {
   width: 100vw;
@@ -114,7 +114,7 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   width: 69vw;
-  height: 5vh;
+  height: 35px;
   border: none;
   border-top-left-radius: 146px;
   border-bottom-left-radius: 146px;
@@ -135,7 +135,7 @@ input::placeholder {
   font-family: "Josefin Sans", sans-serif;
 }
 #searchPanel button {
-  height: 7.7vh;
+  height: 55px;
   border-top-right-radius: 146px;
   border-bottom-right-radius: 146px;
   margin: 20px;
@@ -146,7 +146,7 @@ input::placeholder {
   border-left: 2px solid #a94a4a;
 }
 #randomPick {
-  display: flex; /*change to flex when upper home button is clicked and change to none when search button is cli*/
+  display: flex; 
   justify-content: center;
   align-items: center;
   margin-top: 20px;
@@ -162,7 +162,7 @@ input::placeholder {
 }
 #randomMeal,
 .searchMeal {
-  min-width: 300px;
+  min-width: 340px;
   margin: 1vw;
   background-color: white;
   padding: 0.5vw;
@@ -171,13 +171,13 @@ input::placeholder {
 }
 
 .randomImage {
-  width: 19vw;
+  min-width: 334px;
   height: 25vh;
   border: 5px solid black;
   margin-bottom: 5px;
 }
 .randomImage img {
-  width: 100%;
+  min-width: 334px;
   height: 100%;
 }
 .mealName {
@@ -373,4 +373,99 @@ input::placeholder {
 }
 .headings{
   font-size: 1.5rem !important;
+}
+@media only screen and (max-width: 650px) {
+  #rightNavigation{
+    display: none;
+  }
+  #quoteSection{
+    padding-bottom: 0;
+  }
+  #quotes , #info{
+    font-size: 1.2rem;
+    padding: 10px 0 0 0 ;
+  }
+  #fixedSearchIcon{
+    display: none;
+  }
+  #upperNavigation{
+    width: 100vw;
+  }
+  #quoteSection{
+    width: 95vw;
+  }
+  #searchPanel button{
+    width: 10vw;
+    margin-bottom: 0;
+  }
+  #randomPick{
+    flex-direction: column;
+  }
+  #randomPick u{
+    font-size: 3rem;
+    height: 6vh;
+  }
+  .rating{
+    width: 10vw;
+  }
+  .recipeText{
+    width: 24vw;
+  }
+  .randomImage{
+    min-width: 255px;
+  }
+  .randomImage img {
+    min-width: 266px;
+  }
+  /* #randomMeal, .searchMeal { */
+    #randomMeal{
+      min-width: 272px;
+    margin: 3vw;
+    padding: 2.5vw;
+}
+.searchMeal{
+  padding: 1.5vw;
+  margin-bottom: 20px;
+  min-width: 276px;
+}
+#resultsBox{
+  width: 82vw;
+}
+#results{
+  height: 52vh;
+}
+#logo img {
+  height: 8vh;
+  margin-top: -1vh;
+  margin-left: 1vw;
+}
+#quoteSection{
+  padding: 18px 0;
+}
+#searchBar{
+  margin-bottom: 0;
+}
+.modal-content{
+  height: 90vh;
+}
+#container{
+  flex-direction: column;
+}
+#imageAndIngredients{
+  width: 72vw;
+}
+.modal-content img{
+  height: 180px;
+  width: 72vw;
+}
+#ingredients{
+  height: 20vh;
+}
+#insrtructionsAndButton ol {
+  height: 18vh;
+  width: 76vw;
+}
+#button{
+  left: 49vw;
+}
 }
