@@ -233,6 +233,9 @@ input::placeholder {
   color: #a94a4a;
   font-weight: 700;
 }
+.impData{
+  font-size: 2rem !important;
+}
 .stats {
   display: flex;
   flex-direction: row;
