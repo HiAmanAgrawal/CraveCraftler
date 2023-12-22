@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         } else {
           // Display a message for no results
-          info.innerHTML = `<h3>No results found for "${category}". Spice up a fresh search!</h3>
+          info.innerHTML = `<h3>No results found for <span class="impData">"${category}"</span>. Spice up a fresh search!</h3>
         <img src="https://media1.giphy.com/media/l41lFw057lAJQMwg0/giphy.webp?cid=dda24d501syytcx2emm7nhrt9vb54huxgpaljvsmzl7j1bo6&ep=v1_gifs_gifId&rid=giphy.webp&ct=g">`;
           resultsElement.style.display = "none";
         }

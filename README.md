@@ -22,6 +22,7 @@ This project falls under Kalvium's Front-end Web Development and Design For Deve
 ![Desktop View](./assets/d1.jpg)
 ![Desktop View](./assets/d2.jpg)
 ![Desktop View](./assets/d3.jpg)
+![Desktop View](./assets/d4.jpg)
 
 
 ### Mobile View
