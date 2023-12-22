@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var randomImage = document.querySelector("#randomMeal");
-  var randomName = document.querySelector(".mealName");
+  // Selecting DOM elements
+  var randomImageElement = document.querySelector("#randomMeal");
+  var randomNameElement = document.querySelector(".mealName");
 
-  let searchButton = document.querySelector("#searchButton");
-  let searchResults = document.querySelector("#resultsBox");
-  let searchInput = document.getElementById("searchBar");
-  let randomPick = document.getElementById("randomPick");
+  let searchButtonElement = document.querySelector("#searchButton");
+  let searchResultsElement = document.querySelector("#resultsBox");
+  let searchInputElement = document.getElementById("searchBar");
+  let randomPickElement = document.getElementById("randomPick");
 
-  var mealGrid = document.getElementById("results");
+  var info = document.getElementById("info");
+  var resultsElement = document.getElementById("results");
 
   // Function to create a meal element
   function createMealElement(meal) {
@@ -37,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     starImage.alt = "star";
     starImage.width = "10px";
     var ratingValue = document.createElement("u");
-    ratingValue.textContent = "4.3";
+    ratingValue.textContent = generateRandomRating(4, 5);
     ratingDiv.appendChild(starImage);
     ratingDiv.appendChild(ratingValue);
 
@@ -47,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var viewsDiv = document.createElement("div");
     viewsDiv.className = "views";
     var viewsText = document.createElement("p");
-    viewsText.textContent = "(4.8k views)";
+    viewsText.textContent = "(" + generateRandomRating(4, 5) + "k views)";
     viewsDiv.appendChild(viewsText);
 
     statsDiv.appendChild(ratingDiv);
@@ -64,6 +66,78 @@ document.addEventListener("DOMContentLoaded", function () {
     searchMealDiv.appendChild(statsDiv);
     recipeButtonDiv.appendChild(recipeButton);
     searchMealDiv.appendChild(recipeButtonDiv);
+    // Function to randomly pick a cooking line and author
+    function displayRandomCookingQuote() {
+      // Array of cooking quotes and authors
+      const cookingQuotes = [
+        {
+          quote:
+            "Ignite Your Culinary Passion – Where Every Meal Becomes a Masterpiece!",
+          author: "- Culinary Proverbs",
+        },
+        {
+          quote:
+            "Elevate Your Kitchen Experience – Unleashing Flavors, Crafting Memories.",
+          author: "- Gourmet Gurus",
+        },
+        {
+          quote:
+            "Savor the Art of Cooking – Your Journey to Culinary Excellence Starts Here.",
+          author: "- Epicurean Explorers",
+        },
+        {
+          quote:
+            "Cooking Beyond Boundaries – Where Innovation Meets Tradition on Your Plate.",
+          author: "- Flavor Alchemists",
+        },
+        {
+          quote:
+            "Discover Culinary Bliss – Turning Everyday Ingredients into Extraordinary Experiences.",
+          author: "- Gastronomy Geniuses",
+        },
+        {
+          quote:
+            "Spice Up Your Life – Transforming Ordinary Meals into Culinary Adventures.",
+          author: "- Kitchen Visionaries",
+        },
+        {
+          quote:
+            "Cooking Unleashed – Elevate Your Kitchen, Delight Your Palate, Ignite Your Passion.",
+          author: "- Culinary Mavericks",
+        },
+        {
+          quote:
+            "Crafting Culinary Magic – Where Every Dish Tells a Story of Flavorful Wonders.",
+          author: "- Taste Taleweavers",
+        },
+        {
+          quote:
+            "Embrace the Joy of Cooking – Transforming Kitchens, Nourishing Souls.",
+          author: "- Culinary Connoisseurs",
+        },
+        {
+          quote:
+            "Your Culinary Journey Begins – Infusing Every Meal with Passion and Panache.",
+          author: "- Flavor Pioneers",
+        },
+      ];
+
+      // Randomly picking a cooking quote
+      const randomIndex = Math.floor(Math.random() * cookingQuotes.length);
+      const selectedQuote = cookingQuotes[randomIndex];
+
+      // Display the quote in the specified HTML format
+      const quoteElement = document.getElementById("quote");
+      quoteElement.innerHTML = `
+    "${selectedQuote.quote}"
+    <div id="author">
+      ${selectedQuote.author}
+    </div>
+  `;
+    }
+
+    // Call the function to display a random cooking quote
+    displayRandomCookingQuote();
 
     // Attach additional information to the meal element
     searchMealDiv.setAttribute("data-instructions", meal.strInstructions);
@@ -89,16 +163,16 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       data.meals.forEach((meal) => {
         const mealElement = createMealElement(meal);
-        randomImage.appendChild(mealElement);
+        randomImageElement.appendChild(mealElement);
       });
     });
 
   // Display meals based on search
-  searchButton.addEventListener("click", () => {
-    randomPick.style.display = "none";
-    searchResults.style.display = "block";
+  searchButtonElement.addEventListener("click", () => {
+    randomPickElement.style.display = "none";
+    searchResultsElement.style.display = "block";
 
-    const category = searchInput.value;
+    const category = searchInputElement.value;
     if (category.trim() === "") {
       return;
     }
@@ -106,14 +180,24 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
       .then((response) => response.json())
       .then((data) => {
-        data.meals.forEach((meal) => {
-          const mealElement = createMealElement(meal);
-          mealGrid.appendChild(mealElement);
-        });
+        if (data.meals) {
+          // Display the results and show information
+          resultsElement.style.display = "flex";
+          const resultCount = data.meals.length;
+          info.innerHTML = `<p>We have found <span class="impData">${resultCount}</span> result's based on your search <span class="impData">"${category}":</span></p>`;
+          data.meals.forEach((meal) => {
+            const mealElement = createMealElement(meal);
+            resultsElement.appendChild(mealElement);
+          });
+        } else {
+          // Display a message for no results
+          info.innerHTML = `<h3>No results found for "${category}". Spice up a fresh search!</h3>
+        <img src="https://media1.giphy.com/media/l41lFw057lAJQMwg0/giphy.webp?cid=dda24d501syytcx2emm7nhrt9vb54huxgpaljvsmzl7j1bo6&ep=v1_gifs_gifId&rid=giphy.webp&ct=g">`;
+          resultsElement.style.display = "none";
+        }
       });
   });
 
-  // Function to open the modal and populate content
   // Function to open the modal and populate content
   function openModal(meal) {
     const modal = document.getElementById("recipeModal");
@@ -139,9 +223,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 )}</p>
                 </div>
                 <div id="insrtructionsAndButton">
-                <p id="instructions"><strong class="headings">Instructions:</strong></br> ${
-                  createListFromParagraph(detailedMeal.strInstructions)
-                }</p>
+                <p id="instructions"><strong class="headings">Instructions:</strong></br> ${createListFromParagraph(
+                  detailedMeal.strInstructions
+                )}</p>
                 <div id="button">
                 <img src="./assets/youtube.png" id="ytIcon">
                 <a href="${detailedMeal.strYoutube}" >Watch Tutorial!</a>
@@ -176,10 +260,8 @@ document.addEventListener("DOMContentLoaded", function () {
     return ingredientsList;
   }
 
-  // Close modal when the close button is clicked
   document.getElementById("closeModal").addEventListener("click", closeModal);
 
-  // Close modal when clicking outside the modal
   window.addEventListener("click", function (event) {
     const modal = document.getElementById("recipeModal");
     if (event.target === modal) {
@@ -187,23 +269,57 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Function to create a list from a paragraph
 function createListFromParagraph(paragraph) {
-  if (typeof paragraph !== 'string') {
-    // If paragraph is not a string, return an empty string or handle the error accordingly
-    return '';
+  if (typeof paragraph !== "string") {
+    return "";
   }
 
-  // Split the paragraph into sentences using periods as the delimiter
-  const sentences = paragraph.split('.');
+  const sentences = paragraph.split(".");
 
-  // Remove empty strings from the array (caused by consecutive periods)
-  const nonEmptySentences = sentences.filter(sentence => sentence.trim() !== '');
+  const nonEmptySentences = sentences.filter(
+    (sentence) => sentence.trim() !== ""
+  );
 
-  // Use Array.map to create an array of <li> elements
-  const listItems = nonEmptySentences.map(sentence => `<li>${sentence.trim()}</li>`);
+  const listItems = nonEmptySentences.map(
+    (sentence) => `<li>${sentence.trim()}</li>`
+  );
 
-  // Join the array of <li> elements into a single string
-  const listHtml = `<ol>${listItems.join('')}</ol>`;
+  const listHtml = `<ol>${listItems.join("")}</ol>`;
 
   return listHtml;
 }
+
+// Function to toggle the menu
+function toggleMenu() {
+  console.log("hello");
+  var menuElement = document.querySelector(".menu");
+  var popupElement = document.getElementById("cover");
+  console.log(menuElement);
+  menuElement.classList.toggle("open");
+  popupElement.style.display =
+    popupElement.style.display === "block" ? "none" : "block";
+}
+
+// Function to close the popup
+function closePopup() {
+  var menuElement = document.querySelector(".menu");
+  var popupElement = document.getElementById("cover");
+  menuElement.classList.remove("open");
+  popupElement.style.display = "none";
+}
+
+// Function to generate a random rating between min and max
+function generateRandomRating(min, max) {
+  return (Math.random() * (max - min) + min).toFixed(1);
+}
+
+// Event listeners for home button clicks
+document.getElementById("home1").addEventListener("click", () => {
+  location.reload();
+});
+
+document.getElementById("home2").addEventListener("click", () => {
+  location.reload();
+});

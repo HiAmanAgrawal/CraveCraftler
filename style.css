@@ -26,6 +26,45 @@ body {
   justify-content: space-between;
 }
 
+.menu {
+  display: none;
+  cursor: pointer;
+  position: relative;
+  width: 30px;
+  height: 3px;
+  margin: 6px 0;
+  transition: 0.4s;
+  padding-right: 5vw;
+}
+
+.lines {
+  border: 3px solid #a94a4a;
+  margin: 4px;
+  width: 24px;
+  border-radius: 10px;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  height: 30vh;
+  bottom: 0;
+  background-color: #ffffff;
+  z-index: 2;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
 #logo {
   height: 11vh;
   font-family: "La Belle Aurore", cursive;
@@ -52,25 +91,29 @@ nav {
   justify-content: flex-end;
 }
 
-nav a {
+nav a,
+.popup a {
   color: black;
   text-decoration: none;
   padding: 10px 20px;
   margin: 0 10px;
   border-radius: 5px;
-  transition: background-color 0.3s;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   font-size: 1.2rem;
   color: #a94a4a;
 }
+.popup p {
+  font-family: "Josefin Sans", sans-serif;
+}
 
-nav #home {
+.home {
   background-color: #a94a4a;
-  color: white;
+  color: white !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-nav a:hover {
+nav a:hover,
+.popup a:hover {
   background-color: rgba(116, 72, 72, 0.249);
 }
 
@@ -145,8 +188,11 @@ input::placeholder {
   background-color: white;
   border-left: 2px solid #a94a4a;
 }
+#info img {
+  width: 80vw;
+}
 #randomPick {
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
@@ -180,7 +226,8 @@ input::placeholder {
   min-width: 334px;
   height: 100%;
 }
-.mealName {
+.mealName,
+.impData {
   font-family: "Josefin Sans", sans-serif;
   font-size: 1.2rem;
   color: #a94a4a;
@@ -263,7 +310,8 @@ input::placeholder {
 }
 /* css for modal */
 
-.modal {
+.modal,
+#cover {
   display: none;
   position: fixed;
   z-index: 1;
@@ -290,10 +338,10 @@ input::placeholder {
   border-radius: 10px;
 }
 .modal-content p {
-    font-size: 1.2rem;
-    font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2rem;
+  font-family: "Josefin Sans", sans-serif;
 }
-#button{
+#button {
   padding: 10px;
   background-color: #a94a4a;
   font-size: 1rem;
@@ -305,14 +353,13 @@ input::placeholder {
   align-items: center;
   justify-content: center;
   width: 96px;
-  
 }
-#button a{
+#button a {
   text-decoration: none;
   font-family: "Josefin Sans", sans-serif;
   color: white;
 }
-#container{
+#container {
   display: flex;
   flex-direction: row;
 }
@@ -320,11 +367,11 @@ input::placeholder {
   display: inline-block;
   width: 35vw;
 }
-#insrtructionsAndButton{
+#insrtructionsAndButton {
   display: inline-block;
   width: 40vw;
 }
-#insrtructionsAndButton ol{
+#insrtructionsAndButton ol {
   height: 60vh;
   font-family: "Josefin Sans", sans-serif;
   overflow-y: scroll;
@@ -332,7 +379,7 @@ input::placeholder {
   padding: 20px;
   padding-right: 0;
 }
-#insrtructionsAndButton ol li{
+#insrtructionsAndButton ol li {
   margin: 10px 0;
 }
 #ingredients {
@@ -356,7 +403,7 @@ input::placeholder {
   margin-bottom: 0;
   height: 272px;
 }
-#ytIcon{
+#ytIcon {
   border: none;
   width: 50px;
   height: 30px;
@@ -371,101 +418,128 @@ input::placeholder {
   font-weight: 800;
   cursor: pointer;
 }
-.headings{
+.headings {
   font-size: 1.5rem !important;
 }
-@media only screen and (max-width: 650px) {
-  #rightNavigation{
+#credits {
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+  background-color: white;
+  font-family: "Josefin Sans", sans-serif;
+}
+@media only screen and (max-width: 1022px) {
+  #fixedSearchIcon {
     display: none;
   }
-  #quoteSection{
+}
+@media only screen and (max-width: 980px) {
+  #logo {
+    font-size: 2rem;
+  }
+  #rightNavigation {
+    display: none;
+  }
+  #quoteSection {
     padding-bottom: 0;
   }
-  #quotes , #info{
+  #quotes,
+  #info {
     font-size: 1.2rem;
-    padding: 10px 0 0 0 ;
+    padding: 10px 0 0 0;
   }
-  #fixedSearchIcon{
+  #fixedSearchIcon {
     display: none;
   }
-  #upperNavigation{
+  #upperNavigation {
     width: 100vw;
   }
-  #quoteSection{
+  #quoteSection {
     width: 95vw;
   }
-  #searchPanel button{
+  #searchPanel button {
     width: 10vw;
     margin-bottom: 0;
   }
-  #randomPick{
+  #randomPick {
     flex-direction: column;
   }
-  #randomPick u{
+  #randomPick u {
     font-size: 3rem;
     height: 6vh;
   }
-  .rating{
+  .rating {
     width: 10vw;
   }
-  .recipeText{
+  .recipeText {
     width: 24vw;
   }
-  .randomImage{
+  .randomImage {
     min-width: 255px;
   }
   .randomImage img {
     min-width: 266px;
   }
-  /* #randomMeal, .searchMeal { */
-    #randomMeal{
-      min-width: 272px;
+  #randomMeal {
+    min-width: 272px;
     margin: 3vw;
     padding: 2.5vw;
-}
-.searchMeal{
-  padding: 1.5vw;
-  margin-bottom: 20px;
-  min-width: 276px;
-}
-#resultsBox{
-  width: 82vw;
-}
-#results{
-  height: 52vh;
-}
-#logo img {
-  height: 8vh;
-  margin-top: -1vh;
-  margin-left: 1vw;
-}
-#quoteSection{
-  padding: 18px 0;
-}
-#searchBar{
-  margin-bottom: 0;
-}
-.modal-content{
-  height: 90vh;
-}
-#container{
-  flex-direction: column;
-}
-#imageAndIngredients{
-  width: 72vw;
-}
-.modal-content img{
-  height: 180px;
-  width: 72vw;
-}
-#ingredients{
-  height: 20vh;
-}
-#insrtructionsAndButton ol {
-  height: 18vh;
-  width: 76vw;
-}
-#button{
-  left: 49vw;
-}
+  }
+  .searchMeal {
+    padding: 1.5vw;
+    margin-bottom: 20px;
+    min-width: 276px;
+  }
+  #resultsBox {
+    width: 82vw;
+  }
+  #results {
+    height: 52vh;
+  }
+  #logo img {
+    height: 8vh;
+    margin-top: -1vh;
+    margin-left: 1vw;
+  }
+  #quoteSection {
+    padding: 18px 0;
+  }
+  #searchBar {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+  }
+  .modal-content {
+    height: 90vh;
+  }
+  #container {
+    flex-direction: column;
+  }
+  #imageAndIngredients {
+    width: 72vw;
+  }
+  .modal-content img {
+    height: 180px;
+    width: 72vw;
+  }
+  #ingredients {
+    width: 80vw;
+    height: 20vh;
+  }
+  #insrtructionsAndButton ol {
+    height: 18vh;
+    width: 76vw;
+  }
+  #button {
+    left: 49vw;
+  }
+  .menu {
+    display: inline;
+  }
+  #credits {
+    display: none;
+  }
 }
