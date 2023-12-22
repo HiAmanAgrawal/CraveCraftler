@@ -13,6 +13,9 @@ This project falls under Kalvium's Front-end Web Development and Design For Deve
 - **Star Ratings:** Added functionality for star ratings.
 - **Views Counter:** Implemented views functionality for each meal.
 - **Instructions List:** Converted paragraph instructions into a formatted list.
+- **Random Quote:** Discover daily inspiration with a randomly generated quote.
+  - The website fetches quotes from an external API, offering a touch of wisdom or motivation on each visit.
+
 
 ## Screenshots
 
@@ -50,7 +53,7 @@ This project falls under Kalvium's Front-end Web Development and Design For Deve
 
 ## Fully Responsive Experience
 
-FoodieCraft provides a seamless experience across various devices – from desktops to mobiles. Enjoy culinary exploration anytime, anywhere!
+This website provides a seamless experience across various devices – from desktops to mobiles. Enjoy culinary exploration anytime, anywhere!
 
 ## Credits
 
