@@ -50,7 +50,7 @@ This project falls under Kalvium's Front-end Web Development and Design For Deve
 
 ## Fully Responsive Experience
 
-FoodieCraft provides a seamless experience across various devices – from desktops to mobiles. Enjoy culinary exploration anytime, anywhere!
+This website provides a seamless experience across various devices – from desktops to mobiles. Enjoy culinary exploration anytime, anywhere!
 
 ## Credits
 
